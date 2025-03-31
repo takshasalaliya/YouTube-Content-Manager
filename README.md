@@ -7,60 +7,75 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# YouTube Content Manager
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Project Overview
+YouTube Content Manager is a Laravel-based web application designed to manage and share YouTube-related data efficiently. The system consists of an admin panel with two key pages:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Features
+1. **Add Details Page:**
+   - Admin can input details such as Date, Topic, Link, Category, Speaker, and Experience Sharing Person.
+   - Supports bulk data upload via an Excel file.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+2. **List Page:**
+   - Displays all stored YouTube-related data in a table format.
+   - Each row has two actions:
+     - **Delete:** Removes the entry from the database.
+     - **Share on WhatsApp:** Sends the data via WhatsApp using the [Fonnte API](https://fonnte.com/).
 
-## Learning Laravel
+## Installation Guide
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
+- PHP (>=8.0)
+- Composer
+- Laravel Framework
+- MySQL Database
+- Node.js and npm (for frontend dependencies)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Steps to Install
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/youtube-content-manager.git
+   cd youtube-content-manager
+   ```
+2. Install dependencies:
+   ```bash
+   composer install
+   npm install
+   ```
+3. Copy the environment file and configure the database:
+   ```bash
+   cp .env.example .env
+   ```
+   Update `.env` file with database credentials.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+4. Generate application key:
+   ```bash
+   php artisan key:generate
+   ```
+5. Run migrations:
+   ```bash
+   php artisan migrate
+   ```
+6. Run the server:
+   ```bash
+   php artisan serve
+   ```
 
-## Laravel Sponsors
+## Admin Login Credentials
+- **Email:** [admin@gmail.com](mailto:admin@gmail.com)
+- **Password:** Harinadas36
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Fonnte API Setup
+1. Create an account at [Fonnte](https://fonnte.com/).
+2. Obtain the API key from your Fonnte dashboard.
+3. Add the API key in the `UserController.php` file.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Usage
+- Navigate to `http://127.0.0.1:8000/` to access the admin panel.
+- Use the provided credentials to log in.
+- Add YouTube-related details manually or via Excel upload.
+- View the data in a table and either delete or share it on WhatsApp.
 
 ## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source and available under the [MIT License](LICENSE).

@@ -35,7 +35,7 @@ YouTube Content Manager is a Laravel-based web application designed to manage an
 ### Steps to Install
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/youtube-content-manager.git
+   git clone https://github.com/takshasalaliya/YouTube-Content-Manager
    cd youtube-content-manager
    ```
 2. Install dependencies:
